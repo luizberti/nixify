@@ -24,7 +24,7 @@
     networking.firewall.allowedUDPPorts = [ 51820 ];  # WireGuard
 
     services.openssh.enable = true;
-    services.openssh.permitRootLogin = false;
+    services.openssh.permitRootLogin = "no";
 
 
     # ===============
