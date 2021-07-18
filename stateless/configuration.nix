@@ -24,6 +24,7 @@
     networking.firewall.allowedUDPPorts = [ 51820 ];  # WireGuard
 
     services.openssh.enable = true;
+    services.openssh.permitRootLogin = false;
 
 
     # ===============
@@ -32,12 +33,14 @@
 
     users.mutableUsers = false;
     users.users.root.hashedPassword = "disabled";
+    security.sudo.wheelNeedsPassword = false;
 
     users.users.operator = {
         home = "/home/operator";
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBPSYQ1YyGabCnHTKVYgBxnAhalznCHIpg1V6/Wo5dBS" ];
+        initialPassword = "changeme";  # TODO make this toggleable
     };
 
 
