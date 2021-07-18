@@ -51,6 +51,7 @@ sudo mount /dev/disk/by-label/boot   /mnt/boot
 sudo mount /dev/disk/by-label/linger /mnt/linger
 sudo mount /dev/disk/by-label/nix    /mnt/nix
 
-cp configuration.nix /mnt/etc/nixos/
-nixos-generate-config --root /mnt
+sudo mkdir -p /mnt/etc/nixos/
+sudo cp configuration.nix /mnt/etc/nixos/
+sudo nixos-generate-config --root /mnt
 sudo nixos-install --no-root-passwd --root /mnt
