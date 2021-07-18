@@ -34,6 +34,10 @@ echo '================ /nix'
 sudo parted --script /dev/$disk -- mkpart nix xfs 1GiB 12GiB
 sudo mkfs.xfs -f -L nix /dev/{$disk}3
 
+# /var/lib
+# echo '================ /var/lib'
+# TODO (caches)
+
 
 # ===================
 # MOUNTS AND INSTALLS

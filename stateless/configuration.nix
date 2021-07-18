@@ -38,7 +38,7 @@
     users.users.operator = {
         home = "/home/operator";
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" ];
+        extraGroups = [ "wheel" "networkmanager" ];  # add "audio" if pulseaudio is enabled
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBPSYQ1YyGabCnHTKVYgBxnAhalznCHIpg1V6/Wo5dBS" ];
         initialPassword = "changeme";  # TODO make this toggleable
     };
