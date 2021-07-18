@@ -1,18 +1,11 @@
-argparse --name=stateless 'disk=' || exit 1
-
-
 # ==============
 # DISK SELECTION
 # ==============
 
 set --local devices (lsblk --list --nodeps --noheadings --output=name,type | awk '$2 == "disk" {print $1}')
 
-if not set -q _flag_disk
-    echo 'DISK DEVICES AVALIABLE:' $devices
-    read --local --prompt-str='Which device to install on? ' disk
-else
-    set --local disk "$_flag_disk"
-end
+echo 'DISK DEVICES AVALIABLE:' $devices
+read --local --prompt-str='Which device to install on? ' disk
 
 if not contains $disk $devices
     echo $disk is not a valid option >&2
