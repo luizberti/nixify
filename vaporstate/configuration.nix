@@ -67,4 +67,15 @@
         vim
         wget
     ];
+
+
+    # ==================
+    # DESKTOP MANAGEMENT
+    # ==================
+
+    # fonts = {
+    #     enableFontDir = true;
+    #     enableGhostscriptFonts = true;
+    #     fonts = with pkgs; [ iosevka ];
+    # };
 }
