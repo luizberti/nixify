@@ -19,8 +19,6 @@
 
     networking.hostName = "vaporstate";
     networking.networkmanager.enable = true;
-    # networking.wireless.enable = true;
-    # hardware.bluetooth.enable = true;
 
     networking.interfaces.enp1s0.useDHCP = true;
     networking.useDHCP = false;  # this is deprecated so we set to false
@@ -60,22 +58,11 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-        dash
-        fish
-        starship
+        dash      # a good and minimalistic POSIX shell
+        fish      # an ergonomic shell for custom scripting and interactive use
+        starship  # a good and customizeable shell prompt
+        just      # a better make, to interact with our playbooks
 
-        vim
-        wget
+        neovim
     ];
-
-
-    # ==================
-    # DESKTOP MANAGEMENT
-    # ==================
-
-    # fonts = {
-    #     enableFontDir = true;
-    #     enableGhostscriptFonts = true;
-    #     fonts = with pkgs; [ iosevka ];
-    # };
 }
