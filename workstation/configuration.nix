@@ -9,7 +9,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.cleanTmpDir = true;
 
-    time.timeZone = "England/London";
+    time.timeZone = "America/Sao_Paulo";
     i18n.defaultLocale = "en_US.UTF-8";
 
 
@@ -17,10 +17,10 @@
     # NETWORKING AND SERVICES
     # =======================
 
-    networking.hostName = "vaporstate";
+    networking.hostName = "workstation-alpha";
     networking.networkmanager.enable = true;
-    # networking.wireless.enable = true;
-    # hardware.bluetooth.enable = true;
+    networking.wireless.enable = true;
+    hardware.bluetooth.enable = true;
 
     networking.interfaces.enp1s0.useDHCP = true;
     networking.useDHCP = false;  # this is deprecated so we set to false
@@ -41,9 +41,9 @@
     users.users.root.hashedPassword = "disabled";
     security.sudo.wheelNeedsPassword = false;
 
-    users.users.operator = {
+    users.users.luizberti = {
         createHome = true;
-        home = "/home/operator";
+        home = "/home/luizberti";
         shell = "${pkgs.fish.out}/bin/fish";
 
         isNormalUser = true;
@@ -73,9 +73,9 @@
     # DESKTOP MANAGEMENT
     # ==================
 
-    # fonts = {
-    #     enableFontDir = true;
-    #     enableGhostscriptFonts = true;
-    #     fonts = with pkgs; [ iosevka ];
-    # };
+    fonts = {
+        enableFontDir = true;
+        enableGhostscriptFonts = true;
+        fonts = with pkgs; [ iosevka ];
+    };
 }
