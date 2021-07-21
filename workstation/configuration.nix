@@ -53,7 +53,7 @@
     # NETWORKING AND SERVICES
     # =======================
 
-    networking.hostName = "workstation-alpha";
+    networking.hostName = "helios";
     networking.networkmanager.enable = true;
     networking.wireless.enable = true;
     hardware.bluetooth.enable = true;
