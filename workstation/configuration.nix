@@ -55,7 +55,7 @@
 
     networking.hostName = "helios";
     networking.networkmanager.enable = true;
-    networking.wireless.enable = true;
+    # networking.wireless.enable = true;  # can only enable if there are network interfaces `unmanaged` by networkmanager
     hardware.bluetooth.enable = true;
 
     networking.interfaces.enp1s0.useDHCP = true;
