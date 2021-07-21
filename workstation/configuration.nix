@@ -114,6 +114,7 @@
         fish
         starship
 
+        git
         vim
         wget
     ];
@@ -124,7 +125,8 @@
     # ==================
 
     fonts = {
-        enableFontDir = true;
+        fontDir.enable = true;
+        enableDefaultFonts = true;
         enableGhostscriptFonts = true;
         fonts = with pkgs; [ iosevka ];
     };
