@@ -17,7 +17,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.cleanTmpDir = true;
     boot.tmpOnTmpfs = true;
-    boot.kernelModules = [ "tcp_bbr" ];
+    boot.kernelModules = [ "tcp_bbr" "kvm-amd" "kvm-intel" ];
     boot.kernel.sysctl = {
         "kernel.sysrq" = 0;
 
@@ -79,6 +79,9 @@
     services.openssh.permitRootLogin = "no";
     services.openssh.passwordAuthentication = false;
 
+    virtualisation.docker.enable = true;
+    virtualisation.libvirtd.enable = true;
+
     security.acme.acceptTerms = true;
 
 
@@ -117,6 +120,8 @@
         git
         vim
         wget
+
+        virt-manager
     ];
 
 
